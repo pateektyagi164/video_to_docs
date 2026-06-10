@@ -1,0 +1,20 @@
+fastapi
+uvicorn
+sqlmodel==0.0.16
+psycopg2-binary==2.9.9
+celery==5.3.6
+redis==5.0.3
+
+pip install fastapi uvicorn sqlmodel psycopg2-binary celery redis pydantic-settings eventlet
+
+docker exec -it ai_extractor_db psql -U prateek -d aiextractor
+
+pip install -U openai-whisper
+
+pip install google-genai
+
+celery -A app.core.celery_app worker --pool=gevent --concurrency=2 --loglevel=info
+
+pip install gevent
+
+https://gemini.google.com/share/e8f33cdd6f02

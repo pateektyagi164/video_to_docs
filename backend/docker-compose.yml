@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai_extractor_db
+    restart: always
+    environment:
+      POSTGRES_USER: prateek
+      POSTGRES_PASSWORD: supersecretpassword
+      POSTGRES_DB: aiextractor
+    ports:
+      - "5433:5432" # Maps your laptop's port 5432 to the container's port 5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: ai_extractor_queue
+    restart: always
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
+    # This ensures your database doesn't delete itself when you shut down Docker
+
+
+
