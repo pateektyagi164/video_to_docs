@@ -1,0 +1,32 @@
+# Local Workspace (Crucial: Ignores heavy video files, frames, and audio assets)
+**/local_workspace/
+*.mp4
+*.jpg
+*.mp3
+
+# Python / Backend
+backend/venv/
+venv/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+backend/.env
+.env
+backend/database.db
+*.db
+
+# Node / Frontend
+frontend/node_modules/
+node_modules/
+frontend/dist/
+dist/
+frontend/.env
+frontend/.env.local
+
+# IDEs and OS garbage
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
